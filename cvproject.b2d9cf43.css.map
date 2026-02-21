@@ -1,0 +1,1 @@
+{"mappings":"AAAA","sources":["src/style.scss"],"sourcesContent":["h1 {\r\n    color: red;\r\n}\r\n\r\n@mixin gradient() {\r\n        background: linear-gradient(\r\n        90deg,\r\n        #311c23,\r\n        #24272e,\r\n        #212830\r\n    );\r\n}"],"names":[],"version":3,"file":"cvproject.b2d9cf43.css.map","sourceRoot":"/__parcel_source_root/"}
