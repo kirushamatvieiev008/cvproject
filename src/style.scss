@@ -1,0 +1,41 @@
+$headdercolor: #0e0d12;
+$backroundsectionnumber2: #0e0f13;
+$footercolor: #0b0d11;
+
+$concertsulcolor: #1b1e28;
+$concertslicolor: #151821;
+$concertlinecolor: #242833;
+
+$btncolor: #f82c56;
+$bluetextcolor: #4dd2ff;
+
+// #feeb42 - center
+// #fdda08 - inline
+
+@mixin goldbutton() {
+    background: linear-gradient(
+        90deg, 
+        #fdda08,
+        #feeb42,
+        #fdda08
+
+    );
+}
+
+@mixin section3gradien() {
+        background: linear-gradient(
+        90deg,
+        #212830,
+        #24272e,
+        #311c23,
+    );
+}
+
+@mixin section4gradien() {
+        background: linear-gradient(
+        90deg,
+        #311c23,
+        #24272e,
+        #212830
+    );
+}
