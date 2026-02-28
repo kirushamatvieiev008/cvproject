@@ -13,29 +13,455 @@ $bluetextcolor: #4dd2ff;
 // #fdda08 - inline
 
 @mixin goldbutton() {
-    background: linear-gradient(
-        90deg, 
-        #fdda08,
-        #feeb42,
-        #fdda08
+  background: linear-gradient(90deg, #fdda08, #feeb42, #fdda08);
+}
 
-    );
+@mixin roboto($weight: 400) {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: $weight;
+  font-style: normal;
 }
 
 @mixin section3gradien() {
-        background: linear-gradient(
-        90deg,
-        #212830,
-        #24272e,
-        #311c23,
-    );
+  background: linear-gradient(90deg, #171b20, #1e2127, #311c23);
 }
 
 @mixin section4gradien() {
-        background: linear-gradient(
-        90deg,
-        #311c23,
-        #24272e,
-        #212830
-    );
+  background: linear-gradient(90deg, #311c23, #24272e, #212830);
+}
+
+@mixin captcher() {
+  @include roboto(700);
+  color: white;
+  font-size: 45px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 1520px;
+  margin: 0 auto;
+  outline: solid 1px red;
+}
+
+header {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 200px;
+  background-color: $headdercolor;
+  .logo {
+    color: white;
+    @include roboto(600);
+  }
+}
+
+.navigationList {
+  gap: 50px;
+  li a {
+    color: white;
+    @include roboto();
+  }
+}
+
+main {
+  .introSection {
+    background-image: url(../photos/background.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    position: relative;
+
+    article {
+      position: absolute;
+      top: 150px;
+      left: 50%;
+      transform: translateX(-50%);
+      // margin-left: 200px;
+      // margin-top: 350px;
+
+      .padd {
+        margin-left: 200px;
+      }
+      .textHero {
+        color: white;
+        @include roboto(700);
+        text-shadow: 2px 2px 3px black;
+        // margin-left: 200px;
+        font-size: 52px;
+      }
+      .realRock {
+        color: white;
+        font-size: 18px;
+        @include roboto();
+        margin-top: 20px;
+        text-shadow: 2px 2px 3px black;
+      }
+      .description {
+        color: white;
+        // font-size: 18px;
+        @include roboto();
+        margin-top: 20px;
+        line-height: 25px;
+        text-shadow: 2px 2px 3px black;
+        font-size: 16px;
+      }
+      .afterDescription {
+        color: white;
+        // font-size: 18px;
+        @include roboto();
+        margin-top: 15px;
+        text-shadow: 2px 2px 3px black;
+        // line-height: 25px;
+        padding-bottom: 40px;
+        font-size: 16px;
+      }
+      .buyTicket {
+        @include goldbutton();
+        border: none;
+        padding: 20px 50px;
+        border-radius: 10px;
+        cursor: pointer;
+        box-shadow: 0 0 10px gold;
+        text-transform: uppercase;
+        @include roboto(800);
+        font-size: 16px;
+      }
+      .blueword {
+        color: $bluetextcolor;
+      }
+    }
+  }
+
+  .groupInfo {
+    padding-top: 100px;
+    background-color: $backroundsectionnumber2;
+    padding-bottom: 100px;
+    .tableEvents {
+      background-color: $concertsulcolor;
+      // border: 1px red;
+      border-radius: 5px;
+      width: 1000px;
+      height: 310px;
+      margin: 0 auto;
+      // margin-top: 20px;
+      // gap: 5px;
+      // border: 10px red;
+      outline: solid 1px $concertlinecolor;
+      border-collapse: collapse;
+      border: none;
+      h5 {
+        padding-left: 20px;
+        text-align: left;
+        font-size: 20px;
+        @include roboto(700);
+      }
+      tr {
+        outline: solid 1px $concertlinecolor;
+        //   border-bottom: 1px solid #0051ff;
+        border: none;
+      }
+      td {
+        color: white;
+        width: 25%;
+        text-align: center;
+        border: none;
+        border-bottom: none !important;
+        height: 50px;
+      }
+      th {
+        color: white;
+        height: 50px;
+        text-align: center;
+        border: none;
+        border-bottom: none !important;
+        //   @include roboto(700);
+        //   font-size: 20px;
+        //   text-transform: capitalize;
+        //   padding-left: 20px;
+        //   width: 100%;
+      }
+      p {
+        color: white;
+        padding-left: 20px;
+        text-align: left;
+        @include roboto();
+      }
+      .centerColorTr {
+        background-color: $concertslicolor;
+      }
+      .instructionsTable {
+        color: rgba(255, 255, 255, 0.781);
+      }
+      .buyTickecBtn {
+        background-color: $btncolor;
+        width: 130px;
+        height: 35px;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        @include roboto(500);
+        cursor: pointer;
+      }
+      .toptr {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+      .bottomtr {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+    }
+    .groupPlayers {
+      text-align: center;
+      margin-top: 200px;
+      @include captcher();
+    }
+    .playersList {
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 70px;
+      padding-inline: 50px;
+      // align-items: center;
+      // margin: 0 auto;
+      li {
+        display: flex;
+        flex-direction: column;
+        // gap: -40px;
+      }
+    }
+    .names {
+      margin-top: -40px;
+      color: rgba(255, 255, 255, 0.699);
+      background-color: $concertslicolor;
+      height: 40px;
+      display: flex;
+      justify-content: left;
+      padding-left: 20px;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      align-items: center;
+      @include roboto(500);
+    }
+    .imagesofPlayers {
+      width: 350px;
+      height: 336px;
+      border-radius: 20px;
+    }
+  }
+
+  .historySection {
+    // height: 500px;
+    @include section3gradien();
+    position: relative;
+    padding-bottom: 70px;
+    .ourHistitory {
+      @include roboto(700);
+      color: white;
+      font-size: 45px;
+      padding-top: 120px;
+    }
+    p {
+      color: rgba(255, 255, 255, 0.658);
+      @include roboto();
+      margin-top: 20px;
+      font-size: 21px;
+      line-height: 33px;
+    }
+    .peopleonconcert {
+      position: absolute;
+      top: 200px;
+      left: 1128px;
+      width: 570px;
+    }
+  }
+}
+
+footer {
+  .contactsSection {
+    height: 500px;
+    @include section4gradien();
+    padding-top: 70px;
+    padding-bottom: 150px;
+    .contactWithus {
+      @include captcher();
+      text-align: center;
+    }
+    .inviteText {
+      color: rgba(255, 255, 255, 0.753);
+      @include roboto();
+      text-align: center;
+      padding-top: 20px;
+      font-size: 20px;
+    }
+    .contactsForm {
+      display: flex;
+      flex-wrap: wrap;
+      width: 670px;
+      gap: 10px;
+      height: 280px;
+      //   margin-top: 50px;
+      label {
+        color: rgba(255, 255, 255, 0.712);
+        @include roboto();
+        padding-left: 5px;
+      }
+      input {
+        background-color: $concertslicolor;
+        border: none;
+        padding: 14px 10px;
+        border-radius: 10px;
+        color: rgb(168, 168, 168);
+        outline: none;
+        border: solid 1px rgb(44, 46, 48);
+        @include roboto();
+        width: 280px;
+      }
+      .flexFormItems {
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        gap: 10px;
+        height: fit-content;
+      }
+      .textareaMessage {
+        background-color: $concertslicolor;
+        border: none;
+        padding: 14px 10px;
+        border-radius: 10px;
+        color: rgb(168, 168, 168);
+        outline: none;
+        border: solid 1px rgb(44, 46, 48);
+        @include roboto();
+        width: 590px;
+        height: 70px;
+      }
+      .submitFooter {
+        // margin-top: 10px;
+        background-color: $btncolor;
+        border: none;
+        color: white;
+        border-radius: 12px;
+        // padding: 15px 30px;
+        width: 150px;
+        height: 50px;
+        cursor: pointer;
+      }
+    }
+    .flexFooter {
+      display: flex;
+      margin-top: 50px;
+    }
+    .backMap {
+      background-color: $concertslicolor;
+      border-radius: 10px;
+      border: solid 1px rgb(44, 46, 48);
+      display: flex;
+      justify-content: center;
+      //   align-items: left;
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px 20px;
+    }
+    .location {
+      // margin-top: 20px;
+      border-radius: 10px;
+    }
+    .ourLocationMap {
+      color: white;
+      font-size: 22px;
+      @include roboto();
+      // text-transform: capitalize;
+    }
+  }
+  .policySection {
+    background-color: black;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    .flexPolicy {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .rightsSecured {
+        color: rgba(255, 255, 255, 0.74);
+        // font-size: px;
+        @include roboto();
+    }
+    .listLinks {
+        list-style: none;
+        gap: 15px;
+        a {
+            color: white;
+            @include roboto(300);
+            font-size: 14px;
+        }
+        .liWithDots1 {
+            position: relative;
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 69px;
+                transform: translateY(-50%);
+                width: 2px;
+                height: 2px;
+                background-color: rgb(255, 255, 255);
+                border-radius: 50%;
+            }
+        }
+        .liWithDots2 {
+            position: relative;
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 59px;
+                transform: translateY(-50%);
+                width: 2px;
+                height: 2px;
+                background-color: rgb(255, 255, 255);
+                border-radius: 50%;
+            }
+        }
+    }
+    .lastLi {
+        margin-top: 50px;
+        gap: 20px;
+        a {
+            color: rgba(255, 255, 255, 0.781);
+            @include roboto();
+
+        }
+        .liWithDotsFinal {
+            position: relative;
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 137px;
+                transform: translateY(-50%);
+                width: 2px;
+                height: 2px;
+                background-color: rgb(255, 255, 255);
+                border-radius: 50%;
+            }
+        }
+    }
+  }
+
 }
