@@ -51,9 +51,10 @@ a {
 }
 
 .container {
-  width: 1520px;
+  // width: 100%;
+  max-width: 1520px;
   margin: 0 auto;
-  outline: solid 1px red;
+  padding-inline: 100px;
 }
 
 header {
@@ -61,11 +62,14 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-inline: 200px;
+  padding-inline: 20px;
   background-color: $headdercolor;
   .logo {
     color: white;
     @include roboto(600);
+  }
+  .burger {
+    display: none;
   }
 }
 
@@ -85,65 +89,53 @@ main {
     background-size: cover;
     height: 600px;
     position: relative;
-
-    article {
-      position: absolute;
-      top: 150px;
-      left: 50%;
-      transform: translateX(-50%);
+    .textHero {
+      padding-top: 100px;
+      color: white;
+      @include roboto(700);
+      text-shadow: 2px 2px 3px black;
       // margin-left: 200px;
-      // margin-top: 350px;
-
-      .padd {
-        margin-left: 200px;
-      }
-      .textHero {
-        color: white;
-        @include roboto(700);
-        text-shadow: 2px 2px 3px black;
-        // margin-left: 200px;
-        font-size: 52px;
-      }
-      .realRock {
-        color: white;
-        font-size: 18px;
-        @include roboto();
-        margin-top: 20px;
-        text-shadow: 2px 2px 3px black;
-      }
-      .description {
-        color: white;
-        // font-size: 18px;
-        @include roboto();
-        margin-top: 20px;
-        line-height: 25px;
-        text-shadow: 2px 2px 3px black;
-        font-size: 16px;
-      }
-      .afterDescription {
-        color: white;
-        // font-size: 18px;
-        @include roboto();
-        margin-top: 15px;
-        text-shadow: 2px 2px 3px black;
-        // line-height: 25px;
-        padding-bottom: 40px;
-        font-size: 16px;
-      }
-      .buyTicket {
-        @include goldbutton();
-        border: none;
-        padding: 20px 50px;
-        border-radius: 10px;
-        cursor: pointer;
-        box-shadow: 0 0 10px gold;
-        text-transform: uppercase;
-        @include roboto(800);
-        font-size: 16px;
-      }
-      .blueword {
-        color: $bluetextcolor;
-      }
+      font-size: 52px;
+    }
+    .realRock {
+      color: white;
+      font-size: 18px;
+      @include roboto();
+      margin-top: 20px;
+      text-shadow: 2px 2px 3px black;
+    }
+    .description {
+      color: white;
+      // font-size: 18px;
+      @include roboto();
+      margin-top: 20px;
+      line-height: 25px;
+      text-shadow: 2px 2px 3px black;
+      font-size: 16px;
+    }
+    .afterDescription {
+      color: white;
+      // font-size: 18px;
+      @include roboto();
+      margin-top: 15px;
+      text-shadow: 2px 2px 3px black;
+      // line-height: 25px;
+      padding-bottom: 40px;
+      font-size: 16px;
+    }
+    .buyTicket {
+      @include goldbutton();
+      border: none;
+      padding: 20px 50px;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 10px gold;
+      text-transform: uppercase;
+      @include roboto(800);
+      font-size: 16px;
+    }
+    .blueword {
+      color: $bluetextcolor;
     }
   }
 
@@ -155,8 +147,9 @@ main {
       background-color: $concertsulcolor;
       // border: 1px red;
       border-radius: 5px;
-      width: 1000px;
-      height: 310px;
+      width: 100%;
+      max-width: 1000px;
+      height: auto;
       margin: 0 auto;
       // margin-top: 20px;
       // gap: 5px;
@@ -232,8 +225,9 @@ main {
       @include captcher();
     }
     .playersList {
-      justify-content: space-between;
-      align-items: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
       margin-top: 70px;
       padding-inline: 50px;
       // align-items: center;
@@ -258,8 +252,10 @@ main {
       @include roboto(500);
     }
     .imagesofPlayers {
-      width: 350px;
-      height: 336px;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 350 / 336;
+      object-fit: cover;
       border-radius: 20px;
     }
   }
@@ -267,8 +263,15 @@ main {
   .historySection {
     // height: 500px;
     @include section3gradien();
-    position: relative;
+    // position: relative;
     padding-bottom: 70px;
+    article {
+      width: 100%;
+      position: relative;
+    }
+    .paragrphsWidth {
+      max-width: 55%;
+    }
     .ourHistitory {
       @include roboto(700);
       color: white;
@@ -283,17 +286,19 @@ main {
       line-height: 33px;
     }
     .peopleonconcert {
+      // width: 100%;
       position: absolute;
       top: 200px;
-      left: 1128px;
-      width: 570px;
+      right: 0px;
+      max-width: 570px;
+      height: auto;
     }
   }
 }
 
 footer {
   .contactsSection {
-    height: 500px;
+    min-height: 500px;
     @include section4gradien();
     padding-top: 70px;
     padding-bottom: 150px;
@@ -311,7 +316,8 @@ footer {
     .contactsForm {
       display: flex;
       flex-wrap: wrap;
-      width: 670px;
+      width: 100%;
+      max-width: 670px;
       gap: 10px;
       height: 280px;
       //   margin-top: 50px;
@@ -364,6 +370,9 @@ footer {
     }
     .flexFooter {
       display: flex;
+      justify-content: center;
+      gap: 50px;
+      flex-wrap: wrap;
       margin-top: 50px;
     }
     .backMap {
@@ -378,7 +387,8 @@ footer {
       padding: 20px 20px;
     }
     .location {
-      // margin-top: 20px;
+      width: 700px;
+      height: 300px;
       border-radius: 10px;
     }
     .ourLocationMap {
@@ -393,75 +403,185 @@ footer {
     padding-top: 30px;
     padding-bottom: 50px;
     .flexPolicy {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
     .rightsSecured {
-        color: rgba(255, 255, 255, 0.74);
-        // font-size: px;
-        @include roboto();
+      color: rgba(255, 255, 255, 0.74);
+      // font-size: px;
+      @include roboto();
     }
     .listLinks {
-        list-style: none;
-        gap: 15px;
-        a {
-            color: white;
-            @include roboto(300);
-            font-size: 14px;
+      list-style: none;
+      gap: 15px;
+      a {
+        color: white;
+        @include roboto(300);
+        font-size: 14px;
+      }
+      .liWithDots1 {
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 69px;
+          transform: translateY(-50%);
+          width: 2px;
+          height: 2px;
+          background-color: rgb(255, 255, 255);
+          border-radius: 50%;
         }
-        .liWithDots1 {
-            position: relative;
-            &::after {
-                content: '';
-                position: absolute;
-                top: 50%;
-                left: 69px;
-                transform: translateY(-50%);
-                width: 2px;
-                height: 2px;
-                background-color: rgb(255, 255, 255);
-                border-radius: 50%;
-            }
+      }
+      .liWithDots2 {
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 59px;
+          transform: translateY(-50%);
+          width: 2px;
+          height: 2px;
+          background-color: rgb(255, 255, 255);
+          border-radius: 50%;
         }
-        .liWithDots2 {
-            position: relative;
-            &::after {
-                content: '';
-                position: absolute;
-                top: 50%;
-                left: 59px;
-                transform: translateY(-50%);
-                width: 2px;
-                height: 2px;
-                background-color: rgb(255, 255, 255);
-                border-radius: 50%;
-            }
-        }
+      }
     }
     .lastLi {
-        margin-top: 50px;
-        gap: 20px;
-        a {
-            color: rgba(255, 255, 255, 0.781);
-            @include roboto();
-
+      margin-top: 50px;
+      gap: 20px;
+      a {
+        color: rgba(255, 255, 255, 0.781);
+        @include roboto();
+      }
+      .liWithDotsFinal {
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 137px;
+          transform: translateY(-50%);
+          width: 2px;
+          height: 2px;
+          background-color: rgb(255, 255, 255);
+          border-radius: 50%;
         }
-        .liWithDotsFinal {
-            position: relative;
-            &::after {
-                content: '';
-                position: absolute;
-                top: 50%;
-                left: 137px;
-                transform: translateY(-50%);
-                width: 2px;
-                height: 2px;
-                background-color: rgb(255, 255, 255);
-                border-radius: 50%;
-            }
-        }
+      }
     }
   }
+}
 
+@media (max-width: 1480px) {
+  main {
+    .introSection {
+      // .textHero {
+      //   font-size: 40px;
+      // }
+    }
+    .historySection {
+      .paragrphsWidth {
+        max-width: 100%;
+      }
+      .peopleonconcert {
+        position: unset;
+        text-align: center;
+        margin-top: 50px;
+        max-width: 400px;
+        // margin: 0 auto;
+        // top: 900px;
+        // left: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  main {
+    .groupInfo {
+      .tableEvents {
+        .buyTickecBtn {
+          width: 70px;
+          font-size: 12px;
+        }
+      }
+    }
+    .introSection {
+      .textHero {
+        font-size: 40px;
+      }
+      .description {
+        margin-top: 10px;
+      }
+      .afterDescription {
+        margin-top: 10px;
+      }
+    }
+  }
+  footer {
+    .contactsSection {
+      .contactsForm {
+        width: 350px;
+        .textareaMessage {
+          width: 280px;
+        }
+      }
+      .flexFooter {
+        gap: 150px;
+      }
+      .location {
+        width: 400px;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    .navigationList {
+      display: none;
+    }
+    .burger {
+      display: block;
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      background-color: none;
+      margin: 0;
+      cursor: pointer;
+      background-color: rgba(255, 222, 173, 0);
+      border: none;
+      border-radius: 50%;
+      img {
+        // margin: 0;
+        // padding: 0;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+      }
+    }
+  }
+  main {
+    .introSection {
+      // .textHero {
+      //   font-size: 40px;
+      // }
+    }
+    .historySection {
+      .paragrphsWidth {
+        max-width: 100%;
+      }
+      .peopleonconcert {
+        position: unset;
+        text-align: center;
+        margin-top: 50px;
+        max-width: 300px;
+        // margin: 0 auto;
+        // top: 900px;
+        // left: 0;
+      }
+    }
+  }
 }
