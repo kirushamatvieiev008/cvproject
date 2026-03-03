@@ -12,9 +12,9 @@ a {
 }
 
 .container {
-  outline: 1px solid red;
-  width: 1520px;
+  max-width: 1520px;
   margin: 0 auto;
+  padding-inline: 100px;
 }
 
 header {
@@ -22,7 +22,7 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 100px;
-  padding-inline: 200px;
+  padding-inline: 20px;
   display: flex;
 }
 
@@ -32,6 +32,10 @@ header .logo {
   font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: 600;
+}
+
+header .burger {
+  display: none;
 }
 
 .navigationList {
@@ -55,28 +59,18 @@ main .introSection {
   position: relative;
 }
 
-main .introSection article {
-  position: absolute;
-  top: 150px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-main .introSection article .padd {
-  margin-left: 200px;
-}
-
-main .introSection article .textHero {
+main .introSection .textHero {
   color: #fff;
   font-optical-sizing: auto;
   text-shadow: 2px 2px 3px #000;
+  padding-top: 100px;
   font-family: Roboto, sans-serif;
   font-size: 52px;
   font-style: normal;
   font-weight: 700;
 }
 
-main .introSection article .realRock {
+main .introSection .realRock {
   color: #fff;
   font-optical-sizing: auto;
   text-shadow: 2px 2px 3px #000;
@@ -87,7 +81,7 @@ main .introSection article .realRock {
   font-weight: 400;
 }
 
-main .introSection article .description {
+main .introSection .description {
   color: #fff;
   font-optical-sizing: auto;
   text-shadow: 2px 2px 3px #000;
@@ -99,7 +93,7 @@ main .introSection article .description {
   line-height: 25px;
 }
 
-main .introSection article .afterDescription {
+main .introSection .afterDescription {
   color: #fff;
   font-optical-sizing: auto;
   text-shadow: 2px 2px 3px #000;
@@ -111,7 +105,7 @@ main .introSection article .afterDescription {
   font-weight: 400;
 }
 
-main .introSection article .buyTicket {
+main .introSection .buyTicket {
   cursor: pointer;
   text-transform: uppercase;
   font-optical-sizing: auto;
@@ -126,7 +120,7 @@ main .introSection article .buyTicket {
   box-shadow: 0 0 10px gold;
 }
 
-main .introSection article .blueword {
+main .introSection .blueword {
   color: #4dd2ff;
 }
 
@@ -142,8 +136,9 @@ main .groupInfo .tableEvents {
   border: none;
   border-radius: 5px;
   outline: 1px solid #242833;
-  width: 1000px;
-  height: 310px;
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
   margin: 0 auto;
 }
 
@@ -233,10 +228,11 @@ main .groupInfo .groupPlayers {
 }
 
 main .groupInfo .playersList {
-  justify-content: space-between;
-  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
   margin-top: 70px;
   padding-inline: 50px;
+  display: grid;
 }
 
 main .groupInfo .playersList li {
@@ -262,15 +258,25 @@ main .groupInfo .names {
 }
 
 main .groupInfo .imagesofPlayers {
+  aspect-ratio: 350 / 336;
+  object-fit: cover;
   border-radius: 20px;
-  width: 350px;
-  height: 336px;
+  width: 100%;
+  height: auto;
 }
 
 main .historySection {
   background: linear-gradient(90deg, #171b20, #1e2127, #311c23);
   padding-bottom: 70px;
+}
+
+main .historySection article {
+  width: 100%;
   position: relative;
+}
+
+main .historySection .paragrphsWidth {
+  max-width: 55%;
 }
 
 main .historySection .ourHistitory {
@@ -295,15 +301,16 @@ main .historySection p {
 }
 
 main .historySection .peopleonconcert {
-  width: 570px;
+  max-width: 570px;
+  height: auto;
   position: absolute;
   top: 200px;
-  left: 1128px;
+  right: 0;
 }
 
 footer .contactsSection {
   background: linear-gradient(90deg, #311c23, #24272e, #212830);
-  height: 500px;
+  min-height: 500px;
   padding-top: 70px;
   padding-bottom: 150px;
 }
@@ -332,7 +339,8 @@ footer .contactsSection .inviteText {
 footer .contactsSection .contactsForm {
   flex-wrap: wrap;
   gap: 10px;
-  width: 670px;
+  width: 100%;
+  max-width: 670px;
   height: 280px;
   display: flex;
 }
@@ -394,6 +402,9 @@ footer .contactsSection .contactsForm .submitFooter {
 }
 
 footer .contactsSection .flexFooter {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
   margin-top: 50px;
   display: flex;
 }
@@ -411,6 +422,8 @@ footer .contactsSection .backMap {
 
 footer .contactsSection .location {
   border-radius: 10px;
+  width: 700px;
+  height: 300px;
 }
 
 footer .contactsSection .ourLocationMap {
@@ -515,5 +528,85 @@ footer .policySection .lastLi .liWithDotsFinal:after {
   top: 50%;
   left: 137px;
   transform: translateY(-50%);
+}
+
+@media (width <= 1480px) {
+  main .historySection .paragrphsWidth {
+    max-width: 100%;
+  }
+
+  main .historySection .peopleonconcert {
+    position: unset;
+    text-align: center;
+    max-width: 400px;
+    margin-top: 50px;
+  }
+}
+
+@media (width <= 850px) {
+  main .groupInfo .tableEvents .buyTickecBtn {
+    width: 70px;
+    font-size: 12px;
+  }
+
+  main .introSection .textHero {
+    font-size: 40px;
+  }
+
+  main .introSection .description, main .introSection .afterDescription {
+    margin-top: 10px;
+  }
+
+  footer .contactsSection .contactsForm {
+    width: 350px;
+  }
+
+  footer .contactsSection .contactsForm .textareaMessage {
+    width: 280px;
+  }
+
+  footer .contactsSection .flexFooter {
+    gap: 150px;
+  }
+
+  footer .contactsSection .location {
+    width: 400px;
+  }
+}
+
+@media (width <= 600px) {
+  header .navigationList {
+    display: none;
+  }
+
+  header .burger {
+    text-align: center;
+    background-color: none;
+    cursor: pointer;
+    background-color: #ffdead00;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    display: block;
+  }
+
+  header .burger img {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+  }
+
+  main .historySection .paragrphsWidth {
+    max-width: 100%;
+  }
+
+  main .historySection .peopleonconcert {
+    position: unset;
+    text-align: center;
+    max-width: 300px;
+    margin-top: 50px;
+  }
 }
 /*# sourceMappingURL=cvproject.b2d9cf43.css.map */
