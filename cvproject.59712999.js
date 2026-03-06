@@ -207,15 +207,15 @@
       });
     }
   }
-})({"7wZbQ":[function(require,module,exports,__globalThis) {
+})({"9JJ5D":[function(require,module,exports,__globalThis) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SERVER_PORT = 1234;
 var HMR_SECURE = false;
-var HMR_ENV_HASH = "439701173a9199ea";
+var HMR_ENV_HASH = "d6ea1d42532a7575";
 var HMR_USE_SSE = false;
-module.bundle.HMR_BUNDLE_ID = "9440bf780f77c784";
+module.bundle.HMR_BUNDLE_ID = "7055c94b59712999";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_SERVER_PORT, HMR_ENV_HASH, HMR_SECURE, HMR_USE_SSE, chrome, browser, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -713,67 +713,8 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
     }
 }
 
-},{}],"2R06K":[function(require,module,exports,__globalThis) {
-var _styleScss = require("./style.scss");
-// import Swal from 'sweetalert2'
-const btns = document.querySelectorAll(".buyTicketBtns");
-btns.forEach((btn)=>{
-    btn.addEventListener("click", ()=>{
-        Swal.fire({
-            title: "\u0417\u0430\u043C\u043E\u0432\u043B\u0435\u043D\u043D\u044F \u043A\u0432\u0438\u0442\u043A\u0430",
-            html: `
-      <input id="swal-name" class="swal2-input" placeholder="\u{412}\u{430}\u{448}\u{435} \u{456}\u{43C}'\u{44F}">
-      <input id="swal-email" class="swal2-input" type="email" placeholder="Email">
-      <input id="swal-count" class="swal2-input" type="number" placeholder="\u{41A}\u{456}\u{43B}\u{44C}\u{43A}\u{456}\u{441}\u{442}\u{44C} \u{43A}\u{432}\u{438}\u{442}\u{43A}\u{456}\u{432}" min="1">
-    `,
-            background: "#242833",
-            color: "#ffffff",
-            confirmButtonText: "\u041A\u0443\u043F\u0438\u0442\u0438",
-            cancelButtonText: "\u0421\u043A\u0430\u0441\u0443\u0432\u0430\u0442\u0438",
-            showCancelButton: true,
-            preConfirm: ()=>{
-                return {
-                    name: document.getElementById("swal-name").value,
-                    email: document.getElementById("swal-email").value,
-                    count: document.getElementById("swal-count").value
-                };
-            }
-        }).then((result)=>{
-            if (result.isConfirmed) {
-                const data = result.value;
-                Swal.fire({
-                    title: "\u0423\u0441\u043F\u0456\u0445 \uD83C\uDF89",
-                    text: `\u{414}\u{44F}\u{43A}\u{443}\u{454}\u{43C}\u{43E} ${data.name}! \u{412}\u{438} \u{437}\u{430}\u{43C}\u{43E}\u{432}\u{438}\u{43B}\u{438} ${data.count} \u{43A}\u{432}\u{438}\u{442}\u{43E}\u{43A}(\u{438}).`,
-                    icon: "success",
-                    background: "#242833",
-                    color: "#fff"
-                });
-            }
-        });
-    });
-});
-const contactsForm = document.querySelector('.contactsForm');
-contactsForm.addEventListener('submit', (event)=>{
-    event.preventDefault();
-    const inpName = event.target.elements[0];
-    const inpGmail = event.target.elements[1];
-    const message = event.target.elements[2];
-    console.log(inpName);
-    if (inpName.value && inpGmail.value.includes('@') && inpGmail.value.includes('.')) {
-        console.log(inpName, inpGmail, message);
-        let toStorage = [];
-        toStorage.push({
-            name: inpName.value,
-            comment: message.value,
-            email: inpGmail.value
-        });
-        localStorage.setItem(`userId${localStorage.length}`, JSON.stringify(toStorage));
-        inpName.value = '';
-        inpGmail.value = '';
-        message.value = '';
-    }
-});
+},{}],"4M6V8":[function(require,module,exports,__globalThis) {
 
-},{"./style.scss":"81Z0h"}],"81Z0h":[function() {},{}]},["7wZbQ","2R06K"], "2R06K", "parcelRequire2c45", {})
+},{}]},["9JJ5D","4M6V8"], "4M6V8", "parcelRequire2c45", {})
 
-//# sourceMappingURL=cvproject.0f77c784.js.map
+//# sourceMappingURL=cvproject.59712999.js.map
