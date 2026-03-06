@@ -1,15 +1,16 @@
-<!DOCTYPE html><html lang=uk><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1.0"><title>Document</title><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&amp;display=swap" rel=stylesheet><link rel=stylesheet href=/cvproject/cvproject.b0e5ad87.css><body>
+<!DOCTYPE html><html lang=uk><link rel=stylesheet href=/cvproject/cvproject.597338ae.css><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1.0"><title>Document</title><link rel=stylesheet href=https://unpkg.com/aos@2.3.1/dist/aos.css><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&amp;display=swap" rel=stylesheet><body>
     <header>
         <div class=logo>G&amp;G</div>
         <nav>
-            <ul class=navigationList>
-                <li><a href=#>Про гурт</a></li>
-                <li><a href=#>Концерти</a></li>
-                <li><a href=#>Галерея</a></li>
-                <li><a href=#>Контакти</a></li>
+            <ul class="menu navigationList">
+                <li><a href=#storyabout>Про гурт</a></li>
+                <li><a href=#events>Концерти</a></li>
+                <li><a href=#galery>Галерея</a></li>
+                <li><a href=#contactsSection>Контакти</a></li>
             </ul>
             <button class=burger type=button><img src=/cvproject/burger.d21c248b.jpg alt=#></button>
         </nav>
+        
     </header>
     <main>
         <section class=introSection>
@@ -24,23 +25,25 @@
                         <p class=afterDescription><span class=blueword>Hаші концерти</span> - це завжди контакт з
                             залом, драйв і емоції. Приєднуйся до нас на найблищих
                             виступах і відчуй цей саунд наживо!</p>
-                        <button class=buyTicket type=button>замовити квиток</button>
+                        <div class=wrap>
+                            <button class="buttonBuyHeader buyTicket buyTicketBtns" type=button>замовити
+                                квиток</button>
+                        </div>
                     </div>
                 </div>
             </article>
         </section>
         <section class=groupInfo>
             <div class=container>
-                <table class=tableEvents>
+                <table class=tableEvents id=events>
                     <thead>
                         <tr class=toptr>
                             <th>
-                                <h5>Hайближчі концерти</h5>
+                                <div>Hайближчі концерти</div>
                             </th>
                         </tr>
                     </thead>
                     <tr>
-                        
                         <td>
                             <p class=instructionsTable>Місто/заклад</p>
                         </td>
@@ -50,7 +53,6 @@
                         <td>
                             <p class=instructionsTable>дата і час</p>
                         </td>
-                        
                     </tr>
                     <tr class=centerColorTr>
                         <td>
@@ -62,7 +64,7 @@
                         <td>
                             <p>25.10.2025, 19:00</p>
                         </td>
-                        <td><button class=buyTickecBtn type=button>Замовити квиток</button></td>
+                        <td><button class="buyTickecBtn buyTicketBtns scale-up-center" type=button>Замовити квиток</button></td>
                     </tr>
                     <tr class=centerColorTr>
                         <td>
@@ -74,7 +76,7 @@
                         <td>
                             <p>01.11.2025, 20:00</p>
                         </td>
-                        <td><button class=buyTickecBtn type=button>Замовити квиток</button></td>
+                        <td><button class="buyTickecBtn buyTicketBtns scale-up-center" type=button>Замовити квиток</button></td>
                     </tr>
                     <tr class=centerColorTr>
                         <td>
@@ -86,7 +88,7 @@
                         <td>
                             <p>09.11.2025 19:30</p>
                         </td>
-                        <td><button class=buyTickecBtn type=button>Замовити квиток</button></td>
+                        <td><button class="buyTickecBtn buyTicketBtns scale-up-center" type=button>Замовити квиток</button></td>
                     </tr>
                     <tr class=bottomtr>
                         <td>
@@ -98,20 +100,44 @@
                         <td>
                             <p>16.11.2025, 19:30</p>
                         </td>
-                        <td><button class=buyTickecBtn type=button>Замовити квиток</button></td>
+                        <td><button class="buyTickecBtn buyTicketBtns scale-up-center" type=button>Замовити квиток</button></td>
                     </tr>
                 </table>
                 <h2 class=groupPlayers>Учасники гурту</h2>
-                <ul class=playersList>
-                    <li><img class=imagesofPlayers src=/cvproject/rabbit.0e882a7f.png alt="фото гітариста"><span class=names>Максим - гітара</span></li>
-                    <li><img class=imagesofPlayers src=/cvproject/rockandRoll.4b07e0de.png alt="фото вокаліста"><span class=names>Олена - вокал</span></li>
-                    <li><img class=imagesofPlayers src=/cvproject/bull.9d239ae5.png alt="фото барабанщика"><span class=names>Тарас - барабани</span></li>
+                <ul class=playersList data-aos=zoom-in data-aos-duration=2000 id=galery>
+                    <li class=card>
+                        <img class=imagesofPlayers src=/cvproject/rabbit.0e882a7f.png alt="фото гітариста">
+                        <span class="card__title names">Максим - гітара</span>
+                        <div class=card__text>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem ducimus
+                            deserunt nesciunt, fugit ad repellendus aliquid hic enim, consequuntur nulla alias expedita
+                            rerum id, iure non minima unde magnam itaque.
+                        </div>
+                    </li>
+                    <li class=card>
+                        <img class=imagesofPlayers src=/cvproject/rockandRoll.4b07e0de.png alt="фото вокаліста">
+                        <span class="card__title names">Олена - вокал</span>
+                        <div class=card__text>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem ducimus
+                            deserunt nesciunt, fugit ad repellendus aliquid hic enim, consequuntur nulla alias expedita
+                            rerum id, iure non minima unde magnam itaque.
+                        </div>
+                    </li>
+                    <li class=card>
+                        <img class=imagesofPlayers src=/cvproject/bull.9d239ae5.png alt="фото барабанщика">
+                        <span class="card__title names">Тарас - барабани</span>
+                        <div class=card__text>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem ducimus
+                            deserunt nesciunt, fugit ad repellendus aliquid hic enim, consequuntur nulla alias expedita
+                            rerum id, iure non minima unde magnam itaque.
+                        </div>
+                    </li>
                 </ul>
             </div>
         </section>
-        <section class=historySection>
+        <section class=historySection id=storyabout>
             <div class=container>
-                <article>
+                <article data-aos=fade-up data-aos-duration=1500>
                     <h2 class=ourHistitory>Наша історія</h2>
                     <div class=paragrphsWidth>
                         <p class=firstParagraph>«Грим та Грім» народився з бажання створювати музику, яка відчувається
@@ -149,7 +175,7 @@
         </section>
     </main>
     <footer>
-        <section class=contactsSection>
+        <section class=contactsSection id=contactsSection>
             <div class=container>
                 <h2 class=contactWithus>Зв'яжись з нами</h2>
                 <p class=inviteText>Хочеш заказати виступ або маєш питання? Пиши</p>
@@ -157,17 +183,17 @@
                     <form class=contactsForm action=#>
                         <div class=flexFormItems>
                             <label for=name>Ім'я</label>
-                            <input id=name>
+                            <input class=nameInp id=name>
                         </div>
                         <div class=flexFormItems>
                             <label for=email>Email</label>
-                            <input type=email id=email>
+                            <input class=mailInp type=email id=email>
                         </div>
                         <div class=flexFormItems>
                             <label for=message>Повідомлення</label>
                             <textarea class=textareaMessage name=message id=message placeholder="Pозкажи про свої ідеї..."></textarea>
                         </div>
-                        <button class=submitFooter>Відправити</button>
+                        <button class="shadow-drop-center submitFooter">Відправити</button>
                     </form>
                     <div class=backMap>
                         <span class=ourLocationMap>Hаше місцезнаходження</span>
@@ -181,18 +207,20 @@
                 <div class=flexPolicy>
                     <p class=rightsSecured>© 2025 «Грим та Грім». Всі права захищені.</p>
                     <ul class=listLinks>
-                        <li class=liWithDots1><a href=#>Instagram</a></li>
-                        <li class=liWithDots2><a href=#>YouTube</a></li>
-                        <li><a href=#>Facebook</a></li>
+                        <li class=liWithDots1><a class="footerLinks text-pop-up-top" href=https://www.instagram.com/>Instagram</a></li>
+                        <li class=liWithDots2><a class="footerLinks text-pop-up-top" href=https://www.YouTube.com/>YouTube</a></li>
+                        <li><a class="footerLinks text-pop-up-top" href=https://www.facebook.com/>Facebook</a></li>
                     </ul>
                 </div>
                 <ul class=lastLi>
-                    <li class=liWithDotsFinal><a href=mailto:booking@lotoplay>booking@lotoplay</a></li>
-                    <li><a href=tel:+380991234567>+38 (099) 123-45-67</a></li>
+                    <li class=liWithDotsFinal><a class="footerLink text-pop-up-top" href=mailto:booking@lotoplay>booking@lotoplay</a></li>
+                    <li><a class="footerLinks text-pop-up-top" href=tel:+380991234567>+38 (099) 123-45-67</a></li>
                 </ul>
             </div>
         </section>
     </footer>
-    <script type=module src=/cvproject/cvproject.a67d6403.js></script>
+    <script type=module src=/cvproject/cvproject.d2c1ad7c.js></script>
+    <script src=https://unpkg.com/aos@2.3.1/dist/aos.js></script>
+    <script>AOS.init({once:!0});</script>
 
 
