@@ -1,43 +1,9 @@
 // import 'animate.css';
 // @import '../animate.css';
-$headdercolor: #0e0d12;
-$backroundsectionnumber2: #0e0f13;
-$footercolor: #0b0d11;
 
-$concertsulcolor: #1b1e28;
-$concertslicolor: #151821;
-$concertlinecolor: #242833;
+@import './sourcessForStyles/mixins.scss';
+@import './sourcessForStyles/variables.scss';
 
-$btncolor: #f82c56;
-$bluetextcolor: #4dd2ff;
-
-// #feeb42 - center
-// #fdda08 - inline
-
-@mixin goldbutton() {
-  background: linear-gradient(90deg, #fdda08, #feeb42, #fdda08);
-}
-
-@mixin roboto($weight: 400) {
-  font-family: "Roboto", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: $weight;
-  font-style: normal;
-}
-
-@mixin section3gradien() {
-  background: linear-gradient(90deg, #171b20, #1e2127, #311c23);
-}
-
-@mixin section4gradien() {
-  background: linear-gradient(90deg, #311c23, #24272e, #212830);
-}
-
-@mixin captcher() {
-  @include roboto(700);
-  color: white;
-  font-size: 45px;
-}
 
 html {
   scroll-behavior: smooth;
@@ -61,7 +27,6 @@ a {
 }
 
 .container {
-  // width: 100%;
   max-width: 1520px;
   margin: 0 auto;
   padding-inline: 100px;
@@ -104,7 +69,6 @@ main {
       color: white;
       @include roboto(700);
       text-shadow: 2px 2px 3px black;
-      // margin-left: 200px;
       font-size: 52px;
     }
     .realRock {
@@ -116,7 +80,6 @@ main {
     }
     .description {
       color: white;
-      // font-size: 18px;
       @include roboto();
       margin-top: 20px;
       line-height: 25px;
@@ -125,11 +88,9 @@ main {
     }
     .afterDescription {
       color: white;
-      // font-size: 18px;
       @include roboto();
       margin-top: 15px;
       text-shadow: 2px 2px 3px black;
-      // line-height: 25px;
       padding-bottom: 40px;
       font-size: 16px;
     }
@@ -161,9 +122,6 @@ main {
       max-width: 1000px;
       height: auto;
       margin: 0 auto;
-      // margin-top: 20px;
-      // gap: 5px;
-      // border: 10px red;
       outline: solid 1px $concertlinecolor;
       border-collapse: collapse;
       border: none;
@@ -175,7 +133,6 @@ main {
       }
       tr {
         outline: solid 1px $concertlinecolor;
-        //   border-bottom: 1px solid #0051ff;
         border: none;
       }
       td {
@@ -192,11 +149,6 @@ main {
         text-align: center;
         border: none;
         border-bottom: none !important;
-        //   @include roboto(700);
-        //   font-size: 20px;
-        //   text-transform: capitalize;
-        //   padding-left: 20px;
-        //   width: 100%;
       }
       p {
         color: white;
@@ -240,12 +192,9 @@ main {
       gap: 24px;
       margin-top: 70px;
       padding-inline: 50px;
-      // align-items: center;
-      // margin: 0 auto;
       li {
         display: flex;
         flex-direction: column;
-        // gap: -40px;
       }
     }
     .names {
@@ -267,14 +216,11 @@ main {
       aspect-ratio: 350 / 336;
       object-fit: cover;
       border-radius: 20px;
-      // width: 100px;
     }
   }
 
   .historySection {
-    // height: 500px;
     @include section3gradien();
-    // position: relative;
     padding-bottom: 70px;
     article {
       width: 100%;
@@ -297,7 +243,6 @@ main {
       line-height: 33px;
     }
     .peopleonconcert {
-      // width: 100%;
       position: absolute;
       top: 200px;
       right: 0px;
@@ -331,7 +276,6 @@ footer {
       max-width: 670px;
       gap: 10px;
       height: 280px;
-      //   margin-top: 50px;
       label {
         color: rgba(255, 255, 255, 0.712);
         @include roboto();
@@ -368,12 +312,10 @@ footer {
         height: 70px;
       }
       .submitFooter {
-        // margin-top: 10px;
         background-color: $btncolor;
         border: none;
         color: white;
         border-radius: 12px;
-        // padding: 15px 30px;
         width: 150px;
         height: 50px;
         cursor: pointer;
@@ -392,7 +334,6 @@ footer {
       border: solid 1px rgb(44, 46, 48);
       display: flex;
       justify-content: center;
-      //   align-items: left;
       flex-direction: column;
       gap: 20px;
       padding: 20px 20px;
@@ -406,7 +347,6 @@ footer {
       color: white;
       font-size: 22px;
       @include roboto();
-      // text-transform: capitalize;
     }
   }
   .policySection {
@@ -420,7 +360,6 @@ footer {
     }
     .rightsSecured {
       color: rgba(255, 255, 255, 0.74);
-      // font-size: px;
       @include roboto();
     }
     .listLinks {
@@ -489,9 +428,6 @@ footer {
   main {
     .introSection {
       color: #0b0d11;
-      // .textHero {
-      //   font-size: 40px;
-      // }
     }
     .historySection {
       .paragrphsWidth {
@@ -502,9 +438,6 @@ footer {
         text-align: center;
         margin-top: 50px;
         max-width: 400px;
-        // margin: 0 auto;
-        // top: 900px;
-        // left: 0;
       }
     }
   }
@@ -570,8 +503,6 @@ footer {
       border: none;
       border-radius: 50%;
       img {
-        // margin: 0;
-        // padding: 0;
         width: 20px;
         height: 20px;
         border-radius: 50%;
@@ -586,7 +517,6 @@ footer {
         }
         td {
           p {
-            // color: white;
             font-size: 12px;
           }
         }
@@ -657,109 +587,16 @@ footer {
   }
 }
 
-// .btn:link,
-// .btn:visited {
-//     text-transform: uppercase;
-//     text-decoration: none;
-//     padding: 15px 40px;
-//     display: inline-block;
-//     border-radius: 100px;
-//     transition: all .2s;
-//     position: absolute;
-// }
-
-// .btn:hover {
-//     transform: translateY(-3px);
-//     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-// }
-
-// .btn:active {
-//     transform: translateY(-1px);
-//     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-// }
-
-// .btn-white {
-//     background-color: #fff;
-// }
-
-// .btn::after {
-//     content: "";
-//     display: inline-block;
-//     height: 100%;
-//     width: 100%;
-//     border-radius: 20px;
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     z-index: -1;
-//     transition: all .4s;
-// }
-
-// .btn-white::after {
-//     background-color: #f1dd25;
-// }
-
-// .btn:hover::after {
-//     transform: scaleX(1.4) scaleY(1.6);
-//     opacity: 0;
-// }
-
-// .btn-animated {
-//     animation: moveInBottom 5s ease-out;
-//     animation-fill-mode: backwards;
-// }
-
-// @keyframes moveInBottom {
-//     0% {
-//         opacity: 0;
-//         transform: translateY(30px);
-//     }
-
-//     100% {
-//         opacity: 1;
-//         transform: translateY(0px);
-//     }
-// }
-
-html,
-body {
-  height: 100%;
-}
-
 .wrap {
   height: 100%;
   display: flex;
   align-items: center;
-  // justify-content: center;
 }
 
 .buttonBuyHeader {
-  // min-width: 300px;
-  // min-height: 60px;
   display: inline-flex;
-  // font-family: "Nunito", sans-serif;
-  // font-size: 22px;
-  // align-items: center;
-  // justify-content: center;
-  // text-transform: uppercase;
-  // text-align: center;
-  // letter-spacing: 1.3px;
-  // font-weight: 700;
   color: #313133;
-  // background: #4fd1c5;
-  // background: linear-gradient(
-  //   90deg,
-  //   rgba(129, 230, 217, 1) 0%,
-  //   rgba(79, 209, 197, 1) 100%
-  // );
-  // border: none;
-  // border-radius: 1000px;
-  // box-shadow: 12px 12px 24px rgba(79, 209, 197, 0.64);
   transition: all 0.3s ease-in-out 0s;
-  // cursor: pointer;
-  // outline: none;
-  // position: relative;
-  // padding: 10px;
 }
 
 .buttonBuyHeader::before {
@@ -825,10 +662,8 @@ body {
   position: relative;
   max-width: 399px;
   overflow: hidden;
-  // background: rgba(97, 40, 40, 0);
   border-radius: 20px;
   cursor: pointer;
-  // overflow: scroll;
 }
 
 .card:after {

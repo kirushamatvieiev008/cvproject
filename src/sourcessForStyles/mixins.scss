@@ -1,0 +1,24 @@
+@mixin goldbutton() {
+  background: linear-gradient(90deg, #fdda08, #feeb42, #fdda08);
+}
+
+@mixin roboto($weight: 400) {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: $weight;
+  font-style: normal;
+}
+
+@mixin section3gradien() {
+  background: linear-gradient(90deg, #171b20, #1e2127, #311c23);
+}
+
+@mixin section4gradien() {
+  background: linear-gradient(90deg, #311c23, #24272e, #212830);
+}
+
+@mixin captcher() {
+  @include roboto(700);
+  color: white;
+  font-size: 45px;
+}
