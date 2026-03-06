@@ -1,6 +1,6 @@
 import './style.scss';
 
-import Swal from 'sweetalert2'
+// import Swal from 'sweetalert2'
 
 const btns = document.querySelectorAll(".buyTicketBtns");
 
